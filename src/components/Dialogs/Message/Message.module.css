@@ -1,3 +1,15 @@
 .message {
+    width: 100%;
+    display: flex;
     color: white;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
 }

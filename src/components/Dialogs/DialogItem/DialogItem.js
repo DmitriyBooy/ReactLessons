@@ -5,7 +5,16 @@ import {NavLink} from "react-router-dom";
 export default (props) => {
   return (
     <div className={s.dialog}>
-      <NavLink to={props.id.toString()}>{props.name}</NavLink>
+      <img
+        className={s.avatar}
+        src={'https://bipbap.ru/wp-content/uploads/2021/07/9-1.jpeg'}
+      />
+      <NavLink
+      className={s.name}
+        to={props.id.toString()}
+      >
+        {props.name}
+      </NavLink>
     </div>
   )
 }
