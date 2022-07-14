@@ -1,4 +1,6 @@
-export default {
+import { rerender } from "../render";
+
+export let state = {
   profilePage: {
     postsData: [
       {id: 0, message: 'Hi, how are you', likesCount: 12},
@@ -22,4 +24,13 @@ export default {
       {id: 5, message: 'Yo'},
     ],
   }
+}
+
+export const addPost = (postMessage) => {
+  state.profilePage.postsData.push({
+    id: state.profilePage.postsData.length,
+    message: postMessage,
+    likesCount: 0
+  })
+  rerender(state)
 }
