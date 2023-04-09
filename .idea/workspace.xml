@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c3b7259-8687-42de-b171-90d311dfc95b" name="Changes" comment="Инициализация проекта">
+    <list default="true" id="3c3b7259-8687-42de-b171-90d311dfc95b" name="Changes" comment="Пока ничего нового. Узнал как плодить самые простые компоненты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,6 +53,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "O:/projects/ReactLessons/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,6 +66,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="O:\projects\ReactLessons\src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681062397542</updated>
-      <workItem from="1681062399249" duration="3544000" />
+      <workItem from="1681062399249" duration="6965000" />
     </task>
     <task id="LOCAL-00001" summary="Давай по новой миша, все тлен. Начинаем заного">
       <created>1681062444466</created>
@@ -83,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681064511408</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Пока ничего нового. Узнал как плодить самые простые компоненты">
+      <created>1681067430361</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681067430361</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +111,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Давай по новой миша, все тлен. Начинаем заного" />
     <MESSAGE value="Инициализация проекта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Инициализация проекта" />
+    <MESSAGE value="Пока ничего нового. Узнал как плодить самые простые компоненты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Пока ничего нового. Узнал как плодить самые простые компоненты" />
   </component>
 </project>
