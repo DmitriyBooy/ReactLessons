@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c3b7259-8687-42de-b171-90d311dfc95b" name="Changes" comment="Давай по новой миша, все тлен. Начинаем заного" />
+    <list default="true" id="3c3b7259-8687-42de-b171-90d311dfc95b" name="Changes" comment="Инициализация проекта">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +20,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e53f64f6-b489-4a19-9c4a-1d76ca5ec5b3" />
+        <option name="url" value="https://github.com/DmitriyBooy/ReactLessons.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,6 +55,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "ts.external.directory.path": "C:\\Users\\Дима\\AppData\\Local\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -48,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681062397542</updated>
-      <workItem from="1681062399249" duration="888000" />
+      <workItem from="1681062399249" duration="3544000" />
     </task>
     <task id="LOCAL-00001" summary="Давай по новой миша, все тлен. Начинаем заного">
       <created>1681062444466</created>
@@ -57,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681062444466</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Инициализация проекта">
+      <created>1681064511408</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681064511408</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -65,6 +91,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Давай по новой миша, все тлен. Начинаем заного" />
-    <option name="LAST_COMMIT_MESSAGE" value="Давай по новой миша, все тлен. Начинаем заного" />
+    <MESSAGE value="Инициализация проекта" />
+    <option name="LAST_COMMIT_MESSAGE" value="Инициализация проекта" />
   </component>
 </project>
