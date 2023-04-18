@@ -1,5 +1,6 @@
 import s from './Dialogs.module.css'
 import Dialog from './Dialog/Dialog'
+import Message from './Message/Message'
 
 const Dialogs = () => {
   return (
@@ -21,10 +22,10 @@ const Dialogs = () => {
         />
       </div>
 
-      <div className={s.messages}>
-        <div className={s.message}>Привет</div>
-        <div className={s.message}>Как дела</div>
-        <div className={s.message}>Ыть тыгыдым</div>
+      <div>
+        <Message message='Пиривиривет' />
+        <Message message='Ыть' />
+        <Message message='А тут, тыгыдым' />
       </div>
     </div>
   )

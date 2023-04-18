@@ -1,19 +1,10 @@
-import s from './Profile.module.css'
-import MyPosts from "./MyPosts/MyPosts";
+import MyPosts from './MyPosts/MyPosts'
+import ProfileInfo from './ProfileInfo/ProfileInfo'
 
 const Profile = () => {
   return (
-    <div className={s.content}>
-      <div>
-        <img
-          src="https://images.freeimages.com/images/previews/ac9/railway-hdr-1361893.jpg"
-          alt='profile_header_photo'
-        />
-      </div>
-
-      <div>
-        ava + description
-      </div>
+    <div>
+      <ProfileInfo />
 
       <MyPosts />
     </div>

@@ -1,7 +1,15 @@
-.posts_wrapper {
-
+.posts {
+    padding: 10px;
 }
 
-.posts {
+.new_post {
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+}
 
+.new_post_add_button_wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
 }
