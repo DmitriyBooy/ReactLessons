@@ -1,0 +1,8 @@
+.active {
+    color: gold !important;
+}
+
+.dialog a {
+    text-decoration: none;
+    color: aqua;
+}

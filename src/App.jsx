@@ -22,7 +22,7 @@ const App = () => {
               Component={Profile}
             />
             <Route
-              path='/dialogs'
+              path='/dialogs/*'
               Component={Dialogs}
             />
             <Route
