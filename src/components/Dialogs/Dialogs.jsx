@@ -3,29 +3,63 @@ import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
 
 const Dialogs = () => {
+  const dialogsData = [
+    {
+      id: 1,
+      name: 'Дима'
+    },
+    {
+      id: 2,
+      name: 'Катя'
+    },
+    {
+      id: 3,
+      name: 'Шампиньон'
+    },
+  ]
+
+  const messagesData = [
+    {
+      id: 1,
+      message: 'Пиривиривет'
+    },
+    {
+      id: 2,
+      message: 'Ыть'
+    },
+    {
+      id: 3,
+      message: 'А тут, тыгыдым'
+    },
+  ]
+
   return (
     <div className={s.dialogs}>
       <div className={s.dialog_items}>
-        <Dialog
-          name='Дима'
-          id='1'
-        />
-
-        <Dialog
-          name='Катя'
-          id='2'
-        />
-
-        <Dialog
-          name='Шампиньон'
-          id='3'
-        />
+        {
+          dialogsData.map(({name, id}) => {
+            return (
+              <Dialog
+                name={name}
+                id={id}
+                key={id}
+              />
+            )
+          })
+        }
       </div>
 
       <div>
-        <Message message='Пиривиривет' />
-        <Message message='Ыть' />
-        <Message message='А тут, тыгыдым' />
+        {
+          messagesData.map(({message, id}) => {
+            return (
+              <Message
+                message={message}
+                key={id}
+              />
+            )
+          })
+        }
       </div>
     </div>
   )

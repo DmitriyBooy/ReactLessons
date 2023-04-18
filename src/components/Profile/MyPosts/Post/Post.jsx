@@ -1,6 +1,6 @@
 import s from './Post.module.css'
 
-const Post = ({message, likeCount}) => {
+const Post = ({message, likesCount}) => {
   return (
     <div className={s.item}>
       <img
@@ -19,7 +19,7 @@ const Post = ({message, likeCount}) => {
         </span>
 
         <span>
-          {likeCount}
+          {likesCount}
         </span>
       </div>
     </div>
