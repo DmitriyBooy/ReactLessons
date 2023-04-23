@@ -1,20 +1,7 @@
 import s from './MyPosts.module.css'
 import Post from './Post/Post'
 
-const MyPosts = () => {
-  const postsData = [
-    {
-      id: 1,
-      message: 'Пиривет пиривет',
-      likesCount: 2,
-    },
-    {
-      id: 2,
-      message: 'Ыть тыгыдым',
-      likesCount: 4,
-    },
-  ]
-
+const MyPosts = ({ posts }) => {
   return (
     <div className={s.posts}>
       <h3>
@@ -31,7 +18,7 @@ const MyPosts = () => {
 
       <div className={s.posts}>
         {
-          postsData.map(({ message, likesCount, id }) => {
+          posts.map(({ message, likesCount, id }) => {
             return (
               <Post
                 message={message}

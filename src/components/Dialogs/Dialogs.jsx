@@ -2,42 +2,12 @@ import s from './Dialogs.module.css'
 import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
 
-const Dialogs = () => {
-  const dialogsData = [
-    {
-      id: 1,
-      name: 'Дима'
-    },
-    {
-      id: 2,
-      name: 'Катя'
-    },
-    {
-      id: 3,
-      name: 'Шампиньон'
-    },
-  ]
-
-  const messagesData = [
-    {
-      id: 1,
-      message: 'Пиривиривет'
-    },
-    {
-      id: 2,
-      message: 'Ыть'
-    },
-    {
-      id: 3,
-      message: 'А тут, тыгыдым'
-    },
-  ]
-
+const Dialogs = ({ messages, dialogs }) => {
   return (
     <div className={s.dialogs}>
       <div className={s.dialog_items}>
         {
-          dialogsData.map(({name, id}) => {
+          dialogs.map(({name, id}) => {
             return (
               <Dialog
                 name={name}
@@ -51,7 +21,7 @@ const Dialogs = () => {
 
       <div>
         {
-          messagesData.map(({message, id}) => {
+          messages.map(({message, id}) => {
             return (
               <Message
                 message={message}

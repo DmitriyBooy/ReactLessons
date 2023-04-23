@@ -8,7 +8,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
-const App = () => {
+const App = ({ posts, dialogs, messages }) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -19,11 +19,11 @@ const App = () => {
           <Routes>
             <Route
               path='/profile'
-              Component={Profile}
+              Component={() => <Profile posts={posts} />}
             />
             <Route
               path='/dialogs/*'
-              Component={Dialogs}
+              Component={() => <Dialogs messages={messages} dialogs={dialogs} />}
             />
             <Route
               path='/news'
