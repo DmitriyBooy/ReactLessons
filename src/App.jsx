@@ -4,11 +4,11 @@ import Navbar from './components/Navbar/Navbar'
 import Profile from './components/Profile/Profile'
 import Dialogs from './components/Dialogs/Dialogs'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import News from "./components/News/News";
-import Music from "./components/Music/Music";
-import Settings from "./components/Settings/Settings";
+import News from './components/News/News'
+import Music from './components/Music/Music'
+import Settings from './components/Settings/Settings'
 
-const App = ({ posts, dialogs, messages }) => {
+const App = ({ appState }) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -19,11 +19,11 @@ const App = ({ posts, dialogs, messages }) => {
           <Routes>
             <Route
               path='/profile'
-              Component={() => <Profile posts={posts} />}
+              Component={() => <Profile posts={appState.profilePage.posts} />}
             />
             <Route
               path='/dialogs/*'
-              Component={() => <Dialogs messages={messages} dialogs={dialogs} />}
+              Component={() => <Dialogs data={appState.dialogsPage} />}
             />
             <Route
               path='/news'
