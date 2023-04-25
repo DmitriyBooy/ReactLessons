@@ -8,7 +8,7 @@ import News from './components/News/News'
 import Music from './components/Music/Music'
 import Settings from './components/Settings/Settings'
 
-const App = ({ appState }) => {
+const App = ({ appState, addPost, changeNewPostText }) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -19,7 +19,11 @@ const App = ({ appState }) => {
           <Routes>
             <Route
               path='/profile'
-              Component={() => <Profile posts={appState.profilePage.posts} />}
+              Component={() => <Profile
+                profileState={appState.profilePage}
+                addPost={addPost}
+                changeNewPostText={changeNewPostText}
+              />}
             />
             <Route
               path='/dialogs/*'

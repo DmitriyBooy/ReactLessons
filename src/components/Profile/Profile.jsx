@@ -1,13 +1,15 @@
 import MyPosts from './MyPosts/MyPosts'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 
-const Profile = ({ posts }) => {
+const Profile = ({ profileState, addPost, changeNewPostText }) => {
   return (
     <div>
       <ProfileInfo />
 
       <MyPosts
-        posts={posts}
+        profileState={profileState}
+        addPost={addPost}
+        changeNewPostText={changeNewPostText}
       />
     </div>
   )

@@ -1,5 +1,10 @@
+let rerenderEntireTree = () => {
+  console.log('State changed')
+}
+
 const state = {
   profilePage: {
+    newPostText: 'ЫТЬ ТЫГЫДЫМ',
     posts: [
       {
         id: 1,
@@ -44,5 +49,21 @@ const state = {
     ]
   }
 }
+
+export const addPost = (message) => {
+  state.profilePage.posts.push({
+    message,
+    id: state.profilePage.posts.length + 1,
+    likesCount: 0
+  })
+  rerenderEntireTree()
+}
+
+export const changeNewPostText = (str) => {
+  state.profilePage.newPostText = str
+  rerenderEntireTree()
+}
+
+export const subscribe = (observer) => rerenderEntireTree = observer
 
 export default state
