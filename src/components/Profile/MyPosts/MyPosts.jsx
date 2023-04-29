@@ -1,15 +1,16 @@
 import React from 'react'
 import s from './MyPosts.module.css'
 import Post from './Post/Post'
+import {addPostActionCreator, updateNewPostTextActionsCreator} from '../../../redux/state'
 
-const MyPosts = ({ profileState, addPost, changeNewPostText }) => {
+const MyPosts = ({ profileState, dispatch }) => {
   const textarea = React.createRef()
 
   const addNewPost = () => {
-    addPost()
+    dispatch(addPostActionCreator())
   }
 
-  const onPostChange = () => changeNewPostText(textarea.current.value)
+  const onPostChange = () => dispatch(updateNewPostTextActionsCreator(textarea.current.value))
 
   return (
     <div className={s.posts}>

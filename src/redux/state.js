@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+
 let store = {
   _state: {
     profilePage: {
@@ -46,29 +49,38 @@ let store = {
       ]
     }
   },
-  getState() {
-    return this._state
-  },
   _rerenderEntireTree() {
     console.log('State changed')
   },
-  addPost() {
-    this._state.profilePage.posts.push({
-      message: this._state.profilePage.newPostText,
-      id: this._state.profilePage.posts.length + 1,
-      likesCount: 0
-    })
 
-    this._state.profilePage.newPostText = ''
-    this._rerenderEntireTree(this.getState())
-  },
-  changeNewPostText(str) {
-    this._state.profilePage.newPostText = str
-    this._rerenderEntireTree(this.getState())
+  getState() {
+    return this._state
   },
   subscribe(observer) {
     this._rerenderEntireTree = observer
-  }
+  },
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      this._state.profilePage.posts.push({
+        message: this._state.profilePage.newPostText,
+        id: this._state.profilePage.posts.length + 1,
+        likesCount: 0
+      })
+
+      this._state.profilePage.newPostText = ''
+      this._rerenderEntireTree(this.getState())
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText
+      this._rerenderEntireTree(this.getState())
+    }
+  },
 }
+
+export const addPostActionCreator = () => ({ type: ADD_POST })
+
+export const updateNewPostTextActionsCreator = (text) => ({
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text
+  })
 
 export default store
