@@ -19,7 +19,7 @@ const App = ({ appState, addPost, changeNewPostText }) => {
           <Routes>
             <Route
               path='/profile'
-              Component={() => <Profile
+              element={<Profile
                 profileState={appState.profilePage}
                 addPost={addPost}
                 changeNewPostText={changeNewPostText}
@@ -27,19 +27,19 @@ const App = ({ appState, addPost, changeNewPostText }) => {
             />
             <Route
               path='/dialogs/*'
-              Component={() => <Dialogs data={appState.dialogsPage} />}
+              element={<Dialogs data={appState.dialogsPage} />}
             />
             <Route
               path='/news'
-              Component={News}
+              element={News}
             />
             <Route
               path='/music'
-              Component={Music}
+              element={Music}
             />
             <Route
               path='/settings'
-              Component={Settings}
+              element={Settings}
             />
           </Routes>
         </div>

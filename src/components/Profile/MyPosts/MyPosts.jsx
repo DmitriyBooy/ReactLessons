@@ -6,8 +6,7 @@ const MyPosts = ({ profileState, addPost, changeNewPostText }) => {
   const textarea = React.createRef()
 
   const addNewPost = () => {
-    addPost(textarea.current.value)
-    textarea.current.value = ''
+    addPost()
   }
 
   const onPostChange = () => changeNewPostText(textarea.current.value)
