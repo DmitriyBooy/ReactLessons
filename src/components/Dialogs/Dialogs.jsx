@@ -3,7 +3,6 @@ import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
 
 const Dialogs = ({ dialogs, messages, newMessageText, onSendMessageClick, onNewMessageChange }) => {
-
   return (
     <div className={s.dialogs}>
       <div className={s.dialog_items}>
