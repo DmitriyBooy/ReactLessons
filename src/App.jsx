@@ -8,7 +8,7 @@ import Music from './components/Music/Music'
 import Settings from './components/Settings/Settings'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 
-const App = ({ store }) => {
+const App = () => {
   return (
       <div className="app-wrapper">
         <Header />
@@ -18,12 +18,12 @@ const App = ({ store }) => {
           <Routes>
             <Route
               path='/profile'
-              element={<Profile store={store} />}
+              element={<Profile />}
             />
             <Route
               path='/dialogs/*'
               element={
-                <DialogsContainer store={store} />
+                <DialogsContainer />
             }
             />
             <Route

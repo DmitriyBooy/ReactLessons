@@ -3,24 +3,27 @@ import {
   updateNewMessageTextCreator,
 } from '../../redux/reducers/DialogsReducer'
 import Dialogs from './Dialogs'
+import StoreContext from '../../StoreContext'
 
-const DialogsContainer = ({ store }) => {
-  const state = store.getState()
-  const dispatch = store.dispatch
-
-  const onSendMessageClick = () => dispatch(sendMessageActionCreator())
-
-  const onNewMessageChange = (e) => dispatch(updateNewMessageTextCreator(e.target.value))
-
-
+const DialogsContainer = () => {
   return(
-    <Dialogs
-      dialogs={state.dialogsPage.dialogs}
-      messages={state.dialogsPage.messages}
-      newMessageText={state.dialogsPage.newMessageText}
-      onNewMessageChange={onNewMessageChange}
-      onSendMessageClick={onSendMessageClick}
-    />
+    <StoreContext.Consumer>
+      {
+        (store) => {
+          const dispatch = store.dispatch
+          const onSendMessageClick = () => dispatch(sendMessageActionCreator())
+          const onNewMessageChange = (e) => dispatch(updateNewMessageTextCreator(e.target.value))
+
+          return <Dialogs
+            dialogs={store.getState().dialogsPage.dialogs}
+            messages={store.getState().dialogsPage.messages}
+            newMessageText={store.getState().dialogsPage.newMessageText}
+            onNewMessageChange={onNewMessageChange}
+            onSendMessageClick={onSendMessageClick}
+          />
+        }
+      }
+    </StoreContext.Consumer>
   )
 }
 

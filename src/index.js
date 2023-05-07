@@ -5,13 +5,16 @@ import App from './App.jsx'
 import reportWebVitals from './reportWebVitals'
 import store from './redux/ReduxStore'
 import {BrowserRouter} from 'react-router-dom'
+import { Provider } from './StoreContext'
 
 let root = ReactDOM.createRoot(document.getElementById('root'))
 
 const rerenderEntireTree = (state) => {
   root.render(
     <BrowserRouter>
-      <App store={store} />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   )
 }
