@@ -26,7 +26,12 @@ const App = ({ appState, dispatch }) => {
             />
             <Route
               path='/dialogs/*'
-              element={<Dialogs data={appState.dialogsPage} />}
+              element={
+                <Dialogs
+                  data={appState.dialogsPage}
+                  dispatch={dispatch}
+                />
+            }
             />
             <Route
               path='/news'
