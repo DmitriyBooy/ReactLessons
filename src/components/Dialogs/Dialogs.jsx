@@ -1,21 +1,14 @@
 import s from './Dialogs.module.css'
 import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
-import {
-  sendMessageActionCreator,
-  updateNewMessageTextCreator,
-}from '../../redux/DialogsReducer'
 
-const Dialogs = ({ data, dispatch }) => {
-  const onSendMessageClick = () => dispatch(sendMessageActionCreator())
-
-  const onNewMessageChange = (e) => dispatch(updateNewMessageTextCreator(e.target.value))
+const Dialogs = ({ dialogs, messages, newMessageText, onSendMessageClick, onNewMessageChange }) => {
 
   return (
     <div className={s.dialogs}>
       <div className={s.dialog_items}>
         {
-          data.dialogs.map(({name, id}) => {
+          dialogs.map(({name, id}) => {
             return (
               <Dialog
                 name={name}
@@ -30,7 +23,7 @@ const Dialogs = ({ data, dispatch }) => {
       <div>
         <div>
           {
-            data.messages.map(({message, id}) => {
+            messages.map(({message, id}) => {
               return (
                 <Message
                   message={message}
@@ -45,7 +38,7 @@ const Dialogs = ({ data, dispatch }) => {
           <div>
             <textarea
               placeholder='Тыркаю букавы сюда'
-              value={data.newMessageText}
+              value={newMessageText}
               onChange={onNewMessageChange}
             />
           </div>

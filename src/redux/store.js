@@ -1,6 +1,6 @@
-import profileReducer from './ProfileReducer'
-import sidebarReducer from './SidebarReducer'
-import dialogsReducer from './DialogsReducer'
+import profileReducer from './reducers/ProfileReducer'
+import sidebarReducer from './reducers/SidebarReducer'
+import dialogsReducer from './reducers/DialogsReducer'
 
 let store = {
   _state: {
@@ -50,7 +50,7 @@ let store = {
       ],
       newMessageText: '',
     },
-    sidebar: {}
+    sidebarPage: {}
   },
   _callSubscriber() {
     console.log('State changed')
