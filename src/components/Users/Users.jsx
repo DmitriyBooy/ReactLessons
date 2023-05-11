@@ -1,58 +1,32 @@
 import s from './users.module.css'
+import axios from 'axios'
+import user_avatar from '../../assets/images/user.jpg'
+import React from 'react'
 
-const Users = ({ users, follow, unfollow, setUsers }) => {
-  if (!users.length) {
-    setUsers([
-      {
-        id: 1,
-        firstName: 'Dima',
-        status: 'status-1',
-        followed: false,
-        avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdiEq8XepBWO6-XwAMgqpjxb3-Fj4kOyPCM9QHcus42amsYzleaSIAoHMEj6jo44tqpl4&usqp=CAU',
-        location: {
-          city: 'Moscow',
-          country: 'Russia'
-        }
-      },
-      {
-        id: 2,
-        firstName: 'Lesha',
-        status: 'status-2',
-        followed: false,
-        avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdiEq8XepBWO6-XwAMgqpjxb3-Fj4kOyPCM9QHcus42amsYzleaSIAoHMEj6jo44tqpl4&usqp=CAU',
-        location: {
-          city: 'Anapa',
-          country: 'Russia'
-        }
-      },
-      {
-        id: 3,
-        firstName: 'Oleg',
-        status: 'status-3',
-        followed: true,
-        avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdiEq8XepBWO6-XwAMgqpjxb3-Fj4kOyPCM9QHcus42amsYzleaSIAoHMEj6jo44tqpl4&usqp=CAU',
-        location: {
-          city: 'Sochi',
-          country: 'Russia'
-        }
-      },
-    ])
+class Users extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    axios.get('https://social-network.samuraijs.com/api/1.0/users')
+      .then(({ data }) => this.props.setUsers(data.items))
   }
 
-  return(
-    <div>
-      {
-        users.map((u) => {
-          return (
-            <div
-              key={u.id}
-              className={s.user_wrapper}
-            >
+  render() {
+    return(
+      <div>
+        {
+          this.props.users.map((u) => {
+            return (
+              <div
+                key={u.id}
+                className={s.user_wrapper}
+              >
               <span>
                 <div>
                   <img
                     className={s.user_avatar}
-                    src={u.avatarUrl}
+                    src={u.photos.small !== null ? u.photos.small : user_avatar}
                     alt='user_avatar'
                   />
                 </div>
@@ -60,29 +34,30 @@ const Users = ({ users, follow, unfollow, setUsers }) => {
                 <div>
                   {
                     u.followed
-                      ? <button onClick={() => unfollow(u.id)}>Unfollow</button>
-                      : <button onClick={() => follow(u.id)}>Follow</button>
+                      ? <button onClick={() => this.props.unfollow(u.id)}>Unfollow</button>
+                      : <button onClick={() => this.props.follow(u.id)}>Follow</button>
                   }
 
                 </div>
               </span>
 
-              <span>
                 <span>
-                  <div>{u.firstName}</div>
+                <span>
+                  <div>{u.name}</div>
                   <div>{u.status}</div>
                 </span>
                 <span>
-                  <div>{u.location.country}</div>
-                  <div>{u.location.city}</div>
+                  <div>{'u.location.country'}</div>
+                  <div>{'u.location.city'}</div>
                 </span>
               </span>
-            </div>
-          )
-        })
-      }
-    </div>
-  )
+              </div>
+            )
+          })
+        }
+      </div>
+    )
+  }
 }
 
 export default Users
