@@ -6,3 +6,11 @@
     width: 200px;
     height: 200px;
 }
+
+.page_number {
+    margin-right: 5px;
+}
+
+.select_page {
+    font-weight: 700;
+}
