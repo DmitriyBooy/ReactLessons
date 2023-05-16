@@ -1,7 +1,7 @@
 import s from './users.module.css'
 import user_avatar from '../../assets/images/user.jpg'
 
-const Users = ({ totalCount, pageSize, currentPage, users, onPageChanged }) => {
+const Users = ({ totalCount, pageSize, currentPage, users, onPageChanged, isLoading }) => {
   let pagesCount = Math.ceil(totalCount / pageSize)
   let pages = []
 
@@ -13,12 +13,25 @@ const Users = ({ totalCount, pageSize, currentPage, users, onPageChanged }) => {
     <div>
       <div>
         {
-          pages.map((p) => <span
-            className={`${currentPage === p && s.select_page} ${s.page_number}`}
-            onClick={() => onPageChanged(p)}
-          >
+          pages
+            .filter((p) => (currentPage - 4 < p && currentPage + 4 > p) || p === 1 || p === pages.length)
+            .map((p, i, arr) => {
+              if (i === 1 && p !== 2) {
+                return '...'
+              }
+
+              if (i ===  arr.length - 2 && p !== pages.length - 1) {
+                return '...'
+              }
+
+              return <span
+                className={`${currentPage === p && s.select_page} ${s.page_number}`}
+                onClick={() => onPageChanged(p)}
+                key={p}
+              >
               {p}
-            </span>)
+            </span>
+            })
         }
       </div>
       {
