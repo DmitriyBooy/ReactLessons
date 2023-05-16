@@ -1,50 +1,33 @@
 import s from './users.module.css'
-import axios from 'axios'
 import user_avatar from '../../assets/images/user.jpg'
-import React from 'react'
 
-class Users extends React.Component {
-  componentDidMount() {
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-      .then(({ data }) => {
-        this.props.setUsers(data.items)
-        this.props.setTotalCountUsers(data.totalCount)
-      })
+const Users = ({ totalCount, pageSize, currentPage, users, onPageChanged }) => {
+  let pagesCount = Math.ceil(totalCount / pageSize)
+  let pages = []
+
+  for(let i = 0; i < pagesCount; i++) {
+    pages.push(i + 1)
   }
 
-  onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
-      .then(({ data }) => this.props.setUsers(data.items))
-  }
-
-  render() {
-    let pagesCount = Math.ceil(this.props.totalCount / this.props.pageSize)
-    let pages = []
-
-    for(let i = 0; i < pagesCount; i++) {
-      pages.push(i + 1)
-    }
-
-    return(
+  return(
+    <div>
       <div>
-        <div>
-          {
-            pages.map((p) => <span
-              className={`${this.props.currentPage === p && s.select_page} ${s.page_number}`}
-              onClick={() => this.onPageChanged(p)}
-            >
+        {
+          pages.map((p) => <span
+            className={`${currentPage === p && s.select_page} ${s.page_number}`}
+            onClick={() => onPageChanged(p)}
+          >
               {p}
             </span>)
-          }
-        </div>
-        {
-          this.props.users.map((u) => {
-            return (
-              <div
-                key={u.id}
-                className={s.user_wrapper}
-              >
+        }
+      </div>
+      {
+        users.map((u) => {
+          return (
+            <div
+              key={u.id}
+              className={s.user_wrapper}
+            >
               <span>
                 <div>
                   <img
@@ -64,7 +47,7 @@ class Users extends React.Component {
                 </div>
               </span>
 
-                <span>
+              <span>
                 <span>
                   <div>{u.name}</div>
                   <div>{u.status}</div>
@@ -74,13 +57,12 @@ class Users extends React.Component {
                   <div>{'u.location.city'}</div>
                 </span>
               </span>
-              </div>
-            )
-          })
-        }
-      </div>
-    )
-  }
+            </div>
+          )
+        })
+      }
+    </div>
+  )
 }
 
 export default Users
